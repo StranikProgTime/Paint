@@ -1,0 +1,88 @@
+﻿<Window x:Class="Paint.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Paint"
+        mc:Ignorable="d"
+        Title="Paint" Height="450" Width="800"
+        >
+    <Grid>
+        <Canvas 
+            Name="CnvPaint"
+            Background="White"
+            MouseDown="Canvas_MouseDown"
+            MouseUp="Canvas_MouseUp"
+            MouseMove="Canvas_MouseMove"
+        />
+        <StackPanel 
+            Orientation="Horizontal"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Center"
+        >
+            <Slider 
+                Width="100"
+                Minimum="1"
+                Maximum="5"
+                TickFrequency="1"
+                IsSnapToTickEnabled="True"
+                Margin="0 0 10 0"
+                VerticalAlignment="Center"
+                Name="SliderSize"
+            />
+            <Button 
+                Name="BtnPencil"
+                Width="30"
+                Height="30"
+                BorderBrush="Transparent"
+                Margin="0 0 10 0"
+                Click="Button_Click"
+                Background="Yellow"
+            >
+                <Image Source="{StaticResource PencilIcon}" />
+            </Button>
+            <Button 
+                Name="BtnRubber"
+                Width="30"
+                Height="30"
+                BorderBrush="Transparent"
+                Margin="0 0 10 0"
+                Click="Button_Click"
+            >
+                <Image Source="{StaticResource RubberIcon}" />
+            </Button>
+            <Button 
+                Name="BtnDrip"
+                Width="30"
+                Height="30"
+                BorderBrush="Transparent"
+                Margin="0 0 10 0"
+                Click="Button_Click"
+            >
+                <Image Source="{StaticResource DripIcon}" />
+            </Button>
+            <ComboBox
+                Width="100"
+                Height="25"
+                SelectedIndex="0"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"
+                Name="ColorPicker"
+            >
+                <ComboBoxItem 
+                    Content="Black" 
+                    Background="Black" 
+                    Foreground="White" />
+                <ComboBoxItem 
+                    Content="Red" 
+                    Background="Red" />
+                <ComboBoxItem 
+                    Content="Green" 
+                    Background="Green" />
+                <ComboBoxItem 
+                    Content="Blue" 
+                    Background="Blue" />
+            </ComboBox>
+        </StackPanel>
+    </Grid>
+</Window>
