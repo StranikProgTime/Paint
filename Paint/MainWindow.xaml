@@ -23,12 +23,13 @@
             <Slider 
                 Width="100"
                 Minimum="1"
-                Maximum="5"
+                Maximum="10"
                 TickFrequency="1"
                 IsSnapToTickEnabled="True"
                 Margin="0 0 10 0"
                 VerticalAlignment="Center"
                 Name="SliderSize"
+                ValueChanged="SliderSize_ValueChanged"
             />
             <Button 
                 Name="BtnPencil"
@@ -68,6 +69,7 @@
                 VerticalContentAlignment="Center"
                 HorizontalContentAlignment="Center"
                 Name="ColorPicker"
+                SelectionChanged="ColorPicker_SelectionChanged"
             >
                 <ComboBoxItem 
                     Content="Black" 
